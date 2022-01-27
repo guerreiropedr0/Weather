@@ -19,7 +19,7 @@ const requestWeather = async (key, country) => {
       headers: {
         'Content-Type': 'application/json',
       },
-    }
+    },
   );
   const DATA = await REQUEST.text();
   const PARSED_DATA = JSON.parse(DATA);

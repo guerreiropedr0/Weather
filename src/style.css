@@ -16,14 +16,18 @@ h4 {
 
 h5 {
   font-size: 1.4rem;
+  margin-bottom: 1rem;
 }
 
 h6 {
-  font-size: 1.2rem;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
 }
 
 body {
   background-image: url('./assets/images/wallpaper.jpg');
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #weather-details {
@@ -34,7 +38,9 @@ body {
 
 .current-weather {
   display: flex;
-  background-color: orange;
+  background-image: url('./assets/images/pexels-paul-voie-2627945.jpg');
+  background-position: center;
+  background-size: cover;
   color: #fff;
   width: 70%;
   justify-self: end;
@@ -69,7 +75,7 @@ body {
 }
 
 .bro {
-  background-color: #000;
+  background-color: rgba(53, 53, 68, 0.6);
   color: #fff;
   justify-self: start;
   width: 50%;
@@ -77,4 +83,14 @@ body {
 
 .bro * {
   margin-left: 2rem;
+}
+
+.test2 ul {
+  padding: 0;
+  list-style: none;
+  margin-left: 0;
+}
+
+.test2 li {
+  padding: 0.3rem 0 0.3rem 0;
 }

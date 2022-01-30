@@ -27,6 +27,7 @@ h6 {
 
 body {
   background-image: url('./assets/images/wallpaper.jpg');
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #weather-details {

@@ -3,7 +3,9 @@
 body {
   color: #fff;
   font-family: 'Roboto', sans-serif;
-  background: url('https://raw.githubusercontent.com/guerreiropedr0/Weather/dev/src/assets/images/wallpaper.jpg');
+  background: url('https://images.unsplash.com/photo-1584267385494-9fdd9a71ad75?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   height: 100vh;
   justify-content: center;

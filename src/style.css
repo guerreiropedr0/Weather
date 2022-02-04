@@ -1,96 +1,164 @@
-h1 {
-  font-size: 3rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.8rem;
-}
-
-h4 {
-  font-size: 1.6rem;
-}
-
-h5 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-}
-
-h6 {
-  margin-top: 1rem;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 body {
-  background-image: url('./assets/images/wallpaper.jpg');
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  background: url('https://raw.githubusercontent.com/guerreiropedr0/Weather/dev/src/assets/images/wallpaper.jpg');
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
-#weather-details {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  margin-top: 5%;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+  border: none;
+  outline: none;
+}
+
+.search-bar {
+  padding: 1rem;
+  border-radius: 0.7rem;
+  background: transparent;
+  border: 1px solid #fff;
+  width: 30vw;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.search-bar:focus {
+  border: 2px solid #fff;
+}
+
+.search-bar::placeholder {
+  opacity: 1;
+}
+
+button {
+  height: fit-content;
+  margin-left: -2.5rem;
+  background-color: transparent;
+  font-size: 1.4rem;
+}
+
+.weather {
+  display: flex;
+  border-radius: 0.7rem;
+  width: 75%;
+  height: 75%;
+  justify-content: space-between;
+}
+
+.weather-details {
+  width: 100%;
+  border-top-left-radius: 0.7rem;
+  border-bottom-left-radius: 0.7rem;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: bottom;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .current-weather {
   display: flex;
-  background-image: url('./assets/images/pexels-paul-voie-2627945.jpg');
-  background-position: center;
-  background-size: cover;
-  color: #fff;
-  width: 70%;
-  justify-self: end;
-  align-items: end;
-}
-
-.current-weather * {
-  margin: 0;
+  align-items: center;
+  width: 100%;
+  padding: 0 0 2rem 4rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-bottom-left-radius: 0.7rem;
 }
 
 .current-weather h1 {
+  font-size: 6rem;
   margin-right: 1rem;
-  margin-left: 3rem;
 }
 
-.country-details p,
-.current-weather h1,
-.condition-details p {
-  margin-bottom: 5rem;
-}
-
-.condition-details {
+.current-location {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 1rem;
-  justify-self: start;
+  margin-right: 1rem;
 }
 
-.condition-details img {
-  width: min-content;
+.current-location h3,
+.current-condition h3 {
+  font-size: 0.9rem;
+  font-weight: normal;
 }
 
-.bro {
-  background-color: rgba(53, 53, 68, 0.6);
-  color: #fff;
-  justify-self: start;
-  width: 50%;
+.current-condition {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.bro * {
-  margin-left: 2rem;
+.current-condition img {
+  width: 62px;
 }
 
-.test2 ul {
-  padding: 0;
-  list-style: none;
-  margin-left: 0;
+.weather-information {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(36, 34, 34, 0.6);
+  padding: 2rem;
+  overflow-y: auto;
+  width: 40%;
+  border-top-right-radius: 0.7rem;
+  border-bottom-right-radius: 0.7rem;
 }
 
-.test2 li {
-  padding: 0.3rem 0 0.3rem 0;
+.weather-information h3 {
+  align-self: center;
+}
+
+#bar {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.other-places {
+  display: flex;
+  flex-direction: column;
+}
+
+.other-places li {
+  margin: 0.5rem 0;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+hr {
+  border: 1px solid #fff;
+  margin: 2rem 0;
+  opacity: 0.5;
+}
+
+.next-days {
+  display: flex;
+  flex-direction: column;
+}
+
+.next-days h3 {
+  align-self: center;
+}
+
+.next-days h4 {
+  align-self: center;
+  font-weight: normal;
 }

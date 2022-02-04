@@ -8,7 +8,7 @@ This webpage is using a Weather API.
 
 ## Live Server
 
-In the following link, you can view the [Weather website](https://guerreiropedr0.github.io/Weather/)
+In the following link, you can view the [Weather website](https://guerreiropedr0weather.netlify.app/)
 
 ## Built With
 

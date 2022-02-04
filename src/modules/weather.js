@@ -1,10 +1,3 @@
-export const currentWeather = async (place) => {
-  let request = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=891d8ee1554d48498a1210748220202&q=${place}&days=10&aqi=no&alerts=no`);
-  let data = await request.json();
-  console.log(data);
-  populateCurrentWeather(data);
-};
-
 export const populateCurrentWeather = (data) => {
   document.body.innerHTML = `    <section class="weather">
   <div class="weather-details">
@@ -89,41 +82,39 @@ export const populateCurrentWeather = (data) => {
   }
 
   if (data.current.condition.text === 'Partly cloudy') {
-    document.querySelector('.weather-details').style.backgroundImage =
-      'url("https://images.pexels.com/photos/449751/pexels-photo-449751.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260")';
+    document.querySelector('.weather-details').style.backgroundImage = 'url("https://images.pexels.com/photos/449751/pexels-photo-449751.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260")';
   } else if (data.current.condition.text === 'Clear') {
-    document.querySelector('.weather-details').style.backgroundImage =
-      'url("https://images.pexels.com/photos/754419/pexels-photo-754419.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")';
+    document.querySelector('.weather-details').style.backgroundImage = 'url("https://images.pexels.com/photos/754419/pexels-photo-754419.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")';
   } else if (
-    data.current.condition.text === 'Light rain' ||
-    data.current.condition.text === 'Light drizzle' ||
-    data.current.condition.text === 'Patchy rain possible'
+    data.current.condition.text === 'Light rain'
+    || data.current.condition.text === 'Light drizzle'
+    || data.current.condition.text === 'Patchy rain possible'
   ) {
-    document.querySelector('.weather-details').style.backgroundImage =
-      'url("https://images.pexels.com/photos/950223/pexels-photo-950223.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")';
+    document.querySelector('.weather-details').style.backgroundImage = 'url("https://images.pexels.com/photos/950223/pexels-photo-950223.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")';
   } else if (data.current.condition.text === 'Mist') {
-    document.querySelector('.weather-details').style.backgroundImage =
-      'url("https://images.unsplash.com/photo-1527954513726-611b208be16a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80")';
+    document.querySelector('.weather-details').style.backgroundImage = 'url("https://images.unsplash.com/photo-1527954513726-611b208be16a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80")';
   } else if (data.current.condition.text === 'Heavy snow') {
-    document.querySelector('.weather-details').style.backgroundImage =
-      'url("https://images.pexels.com/photos/5864098/pexels-photo-5864098.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")';
+    document.querySelector('.weather-details').style.backgroundImage = 'url("https://images.pexels.com/photos/5864098/pexels-photo-5864098.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")';
   } else if (data.current.condition.text === 'Sunny') {
-    document.querySelector('.weather-details').style.backgroundImage =
-      'url("https://images.pexels.com/photos/3768/sky-sunny-clouds-cloudy.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260")';
+    document.querySelector('.weather-details').style.backgroundImage = 'url("https://images.pexels.com/photos/3768/sky-sunny-clouds-cloudy.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260")';
   } else if (data.current.condition.text === 'Overcast') {
-    document.querySelector('.weather-details').style.backgroundImage =
-      'url("https://images.pexels.com/photos/3888585/pexels-photo-3888585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")';
+    document.querySelector('.weather-details').style.backgroundImage = 'url("https://images.pexels.com/photos/3888585/pexels-photo-3888585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")';
   } else if (data.current.condition.text === 'Light snow') {
-    document.querySelector('.weather-details').style.backgroundImage =
-      'url("https://images.pexels.com/photos/974063/pexels-photo-974063.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")';
+    document.querySelector('.weather-details').style.backgroundImage = 'url("https://images.pexels.com/photos/974063/pexels-photo-974063.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")';
   }
-
   const FORM = document.querySelector('.search');
   const INPUT_TEXT = document.querySelector('.search-bar');
   FORM.addEventListener('submit', (event) => {
     event.preventDefault();
+    // eslint-disable-next-line no-use-before-define
     currentWeather(INPUT_TEXT.value);
     FORM.reset();
     FORM.focus();
   });
+};
+
+export const currentWeather = async (place) => {
+  const request = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=891d8ee1554d48498a1210748220202&q=${place}&days=10&aqi=no&alerts=no`);
+  const data = await request.json();
+  populateCurrentWeather(data);
 };

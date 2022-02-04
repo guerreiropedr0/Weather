@@ -42,7 +42,6 @@ body {
 }
 
 button {
-  height: fit-content;
   margin-left: -2.5rem;
   background-color: transparent;
   font-size: 1.4rem;

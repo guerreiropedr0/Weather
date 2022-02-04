@@ -1,10 +1,14 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Template
+# Weather Website
 
-> This repository is a template to all my projects.
+> This repository is a webpage that contains weather data of countries and cities.
 
-This template includes Webpack, Stylelint, ESlint and Weblint.
+This webpage is using a Weather API.
+
+## Live Server
+
+In the following link, you can view the [Weather website](https://guerreiropedr0.github.io/Weather/)
 
 ## Built With
 
@@ -37,7 +41,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## Acknowledgments
 
-I took inspiration from a previous coding partner of mine, check his [GitHub profile](https://github.com/ahmedtaa)
+In this project I used the [Leaderboard API](https://www.weatherapi.com/), please check it out! 😊
 
 ## Show your support
 
